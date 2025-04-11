@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Notificación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f8c;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .icon {
+            margin-right: 6px;
+            color: #0077b6;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fa-solid fa-bell icon"></i>Crear Notificación</h1>
+    <form action="procesar_notificacion.php" method="POST">
+        <label for="asunto"><i class="fa-solid fa-pen icon"></i>Asunto:</label>
+        <input type="text" id="asunto" name="asunto" required>
+
+        <label for="descripcion"><i class="fa-solid fa-align-left icon"></i>Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+        <label for="tipo"><i class="fa-solid fa-list icon"></i>Tipo de Notificación:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="Solicitud">Solicitud</option>
+            <option value="Alerta">Alerta</option>
+            <option value="Mensaje">Mensaje</option>
+        </select>
+
+        <label for="fecha_creacion"><i class="fa-solid fa-calendar icon"></i>Fecha de Creación:</label>
+        <input type="datetime-local" id="fecha_creacion" name="fecha_creacion" required>
+
+        <input type="submit" value="Enviar notificación">
+    </form>
+</body>
+</html>
