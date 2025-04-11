@@ -2,12 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>📣 Nueva Notificación</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1827/1827392.png">
+    <title>Crear Notificación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
             padding: 40px;
             text-align: center;
         }
@@ -15,64 +17,72 @@
         form {
             display: inline-block;
             background-color: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: left;
         }
 
         input, select, textarea {
-            width: 260px;
+            width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border-radius: 6px;
+            margin: 8px 0 20px;
+            border-radius: 8px;
             border: 1px solid #ccc;
+            font-size: 15px;
         }
 
         input[type="submit"] {
-            background-color: #16a085;
+            background-color: #0077b6;
             color: white;
             border: none;
-            cursor: pointer;
+            padding: 12px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #1abc9c;
+            background-color: #005f8c;
         }
 
         h1 {
             margin-bottom: 25px;
-            color: #2c3e50;
+            color: #333;
         }
 
-        p.info {
-            font-size: 0.9em;
+        label {
+            font-weight: bold;
             color: #555;
-            margin-top: 15px;
+        }
+
+        .icon {
+            margin-right: 6px;
+            color: #0077b6;
         }
     </style>
 </head>
 <body>
-    <h1>📩 Crear Notificación</h1>
+    <h1><i class="fa-solid fa-bell icon"></i>Crear Notificación</h1>
     <form action="procesar_notificacion.php" method="POST">
-        <label for="asunto">Asunto:</label><br>
-        <input type="text" id="asunto" name="asunto" required><br><br>
+        <label for="asunto"><i class="fa-solid fa-pen icon"></i>Asunto:</label>
+        <input type="text" id="asunto" name="asunto" required>
 
-        <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" name="descripcion" rows="4" cols="40" required></textarea><br><br>
+        <label for="descripcion"><i class="fa-solid fa-align-left icon"></i>Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
-        <label for="tipo">Tipo de Notificación:</label><br>
+        <label for="tipo"><i class="fa-solid fa-list icon"></i>Tipo de Notificación:</label>
         <select id="tipo" name="tipo" required>
             <option value="Solicitud">Solicitud</option>
             <option value="Alerta">Alerta</option>
             <option value="Mensaje">Mensaje</option>
-        </select><br><br>
+        </select>
 
-        <label for="fecha_creacion">Fecha de Creación:</label><br>
-        <input type="datetime-local" id="fecha_creacion" name="fecha_creacion" required><br><br>
+        <label for="fecha_creacion"><i class="fa-solid fa-calendar icon"></i>Fecha de Creación:</label>
+        <input type="datetime-local" id="fecha_creacion" name="fecha_creacion" required>
 
         <input type="submit" value="Enviar notificación">
     </form>
-
-    <p class="info">Asegúrate de que la información sea correcta antes de enviar la notificación.</p>
 </body>
 </html>
