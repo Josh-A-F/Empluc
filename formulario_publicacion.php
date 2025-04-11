@@ -4,7 +4,6 @@ require_once 'conexion.php';
 $conexion = new Conexion();
 $pdo = $conexion->conectar();
 
-// Obtener categorías
 $stmtCategorias = $pdo->query("SELECT IdCategoria, Nombre FROM categoria");
 $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -17,7 +16,7 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background-color:rgb(215, 207, 207);
             padding: 40px;
             text-align: center;
         }
@@ -27,7 +26,7 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
             background-color: white;
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 10px rgba(11, 11, 11, 0.2);
         }
 
         input, select, textarea {
@@ -39,14 +38,14 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
         }
 
         input[type="submit"] {
-            background-color: #2c3e50;
+            background-color: #079bf7;;
             color: white;
             border: none;
             cursor: pointer;
         }
 
         input[type="submit"]:hover {
-            background-color: #34495e;
+            background-color:rgb(7, 7, 7);
         }
 
         h2 {
