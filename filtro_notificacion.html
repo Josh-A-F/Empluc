@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciona el tipo de notificacion que deseas ver </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        select, button {
+            padding: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Filtrar Notificaciones por Tipo</h2>
+    <form method="POST" action="reporte_notificacion.php">
+        <label for="tipo">Selecciona el tipo:</label>
+        <select name="tipo" id="tipo" required>
+            <option value="">-- Selecciona --</option>
+            <option value="Solicitud">Solicitud</option>
+            <option value="Alerta">Alerta</option>
+            <option value="Mensaje">Mensaje</option>
+        </select>
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+</html>

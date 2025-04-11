@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Notificación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        input, select {
+            width: 250px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #34495e;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear notificación</h1>
+    <form action="procesar_notificacion.php" method="POST">
+        <label for="asunto">Asunto:</label><br>
+        <input type="text" id="asunto" name="asunto" required><br><br>
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="40" required></textarea><br><br>
+
+        <label for="tipo">Tipo de Notificación:</label><br>
+        <select id="tipo" name="tipo" required>
+            <option value="Solicitud">Solicitud</option>
+            <option value="Alerta">Alerta</option>
+            <option value="Mensaje">Mensaje</option>
+        </select><br><br>
+
+        <label for="fecha_creacion">Fecha de Creación:</label><br>
+        <input type="datetime-local" id="fecha_creacion" name="fecha_creacion" required><br><br>
+
+        <input type="submit" value="Enviar notificación">
+    </form>
+</body>
+</html>
+
+
