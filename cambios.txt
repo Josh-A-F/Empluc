@@ -1,0 +1,4 @@
+Cambios a hacer en el código:
+- Optimizar el módulo de login
+- Agregar validación de campos vacíos
+- Mejorar el diseño del formulario
