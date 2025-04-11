@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>📣 Nueva Notificación</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1827/1827392.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        input, select, textarea {
+            width: 260px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #16a085;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1abc9c;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        p.info {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📩 Crear Notificación</h1>
+    <form action="procesar_notificacion.php" method="POST">
+        <label for="asunto">Asunto:</label><br>
+        <input type="text" id="asunto" name="asunto" required><br><br>
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="40" required></textarea><br><br>
+
+        <label for="tipo">Tipo de Notificación:</label><br>
+        <select id="tipo" name="tipo" required>
+            <option value="Solicitud">Solicitud</option>
+            <option value="Alerta">Alerta</option>
+            <option value="Mensaje">Mensaje</option>
+        </select><br><br>
+
+        <label for="fecha_creacion">Fecha de Creación:</label><br>
+        <input type="datetime-local" id="fecha_creacion" name="fecha_creacion" required><br><br>
+
+        <input type="submit" value="Enviar notificación">
+    </form>
+
+    <p class="info">Asegúrate de que la información sea correcta antes de enviar la notificación.</p>
+</body>
+</html>
